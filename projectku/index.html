@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>fauzanalifatah</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- GSAP Library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+</head>
+<body>
+    <!-- Background Music -->
+    <audio id="bgMusic" loop autoplay>
+        <source src="music/Januari - Glenn Fredly _ Piano Karaoke by Andre Panggabean [CrjMFdYOiwc].mp3" type="audio/mpeg">
+    </audio>
+    
+    <!-- Music Control Button (Minimal) -->
+    <button class="music-toggle-btn muted" id="musicToggleBtn" title="Matikan/Nyalakan Musik">
+        <i class="fas fa-volume-mute" id="musicIcon"></i>
+    </button>
+
+    <!-- Loading Screen -->
+    <div class="loading-screen">
+        <div class="loader-container">
+            <div class="loader">
+                <div class="loader-ring"></div>
+                <div class="loader-ring"></div>
+                <div class="loader-ring"></div>
+            </div>
+            <div class="loading-text">ZanWeb</div>
+            <div class="loading-subtext">Loading...</div>
+        </div>
+    </div>
+
+    <!-- Header/Navigation -->
+    <header class="header">
+        <nav class="navbar">
+            <div class="logo">ZanWeb</div>
+            <ul class="nav-menu">
+                <li><a href="#home" class="nav-link">Beranda</a></li>
+                <li><a href="#about" class="nav-link">Tentang</a></li>
+                <li><a href="#skills-education" class="nav-link">Skills</a></li>
+                <li><a href="#portfolio" class="nav-link">Kenangan</a></li>
+                <li><a href="#blog" class="nav-link">Blog</a></li>
+                <li><a href="#contact" class="nav-link">Kontak</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <img src="portofolio/Gambar 2.jpeg" alt="Background" class="hero-bg-image" id="heroMainImage">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <div class="hero-greeting">Hi, my name is</div>
+            <h1 class="hero-name">Muhammad Fauzan Ali Fatah</h1>
+            <h2 class="hero-role">I am a <span id="changingText">UI/UX Designer</span></h2>
+            <p class="hero-description">I'm a software engineer specializing in building exceptional digital experiences. Currently focused on creating accessible, human-centered products.</p>
+            <div class="hero-buttons">
+                <a href="#about" class="hero-btn primary">Lets See..</a>
+                <a href="#contact" class="hero-btn secondary">Contact Me</a>
+            </div>
+        </div>
+        <!-- Image Gallery Thumbnails -->
+        <div class="hero-gallery-container">
+            <div class="hero-gallery">
+                <div class="gallery-thumbnail active" data-image="portofolio/Gambar 2.jpeg" data-index="0">
+                    <img src="portofolio/Gambar 2.jpeg" alt="Moment 1">
+                    <div class="thumbnail-overlay">
+                        <p>Momen Uas Digital Marketing</p>
+                    </div>
+                </div>
+                <div class="gallery-thumbnail" data-image="portofolio/Gambar 3 (Tampilan Awal).png" data-index="1">
+                    <img src="portofolio/Gambar 3 (Tampilan Awal).png" alt="Moment 2">
+                    <div class="thumbnail-overlay">
+                        <p>Momen Juara Business Plan</p>
+                    </div>
+                </div>
+                <div class="gallery-thumbnail" data-image="background/Background 2.jpeg" data-index="2">
+                    <img src="background/Background 2.jpeg" alt="Moment 3">
+                    <div class="thumbnail-overlay">
+                        <p>Momen After Uas Digital Marketing</p>
+                    </div>
+                </div>
+                <div class="gallery-thumbnail" data-image="background/Background 3.jpeg" data-index="3">
+                    <img src="background/Background 3.jpeg" alt="Moment 4">
+                    <div class="thumbnail-overlay">
+                        <p>Momen After Uas Pengantar Bisnis Digital</p>
+                    </div>
+                </div>
+                <!-- Clone untuk infinite loop -->
+                <div class="gallery-thumbnail clone" data-image="portofolio/Gambar 2.jpeg" data-index="0">
+                    <img src="portofolio/Gambar 2.jpeg" alt="Moment 1">
+                    <div class="thumbnail-overlay">
+                        <p>Momen Uas Digital Marketing</p>
+                    </div>
+                </div>
+                <div class="gallery-thumbnail clone" data-image="portofolio/Gambar 3 (Tampilan Awal).png" data-index="1">
+                    <img src="portofolio/Gambar 3 (Tampilan Awal).png" alt="Moment 2">
+                    <div class="thumbnail-overlay">
+                        <p>Momen Juara Business Plan</p>
+                    </div>
+                </div>
+                <div class="gallery-thumbnail clone" data-image="background/Background 2.jpeg" data-index="2">
+                    <img src="background/Background 2.jpeg" alt="Moment 3">
+                    <div class="thumbnail-overlay">
+                        <p>Momen After Uas Digital Marketing</p>
+                    </div>
+                </div>
+                <div class="gallery-thumbnail clone" data-image="background/Background 3.jpeg" data-index="3">
+                    <img src="background/Background 3.jpeg" alt="Moment 4">
+                    <div class="thumbnail-overlay">
+                        <p>Momen After Uas Pengantar Bisnis Digital</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <h2 class="section-title">About Me</h2>
+            <div class="about-content">
+                <div class="about-image">
+                    <img src="about me/Me.jpeg" alt="Profile Picture">
+                </div>
+                <div class="about-text">
+                    <h3 id="splitTextHeading" class="split-text-heading">Ayoo Kenal Lebih Dekat Guyss...!!!</h3>
+                    <p>Lahir di Bone, tumbuh di Pulau Buru, Ambon. Dari SD Negeri 1 Buru hingga MTs Al-Hilaal Namlea, saya belajar bahwa pondasi agama adalah tiang kokoh kehidupan. SMA Negeri 1 Namlea membuka mata saya pada dunia teknologi dan desain yang kini saya tekuni di S1 Bisnis Digital, Universitas Negeri Makassar.</p>
+                    <p>Dari SNBP hingga kampus impian, perjalanan ini mengajarkan: <strong>"Keep learning, keep growing - knowledge is the only wealth that multiplies when shared."</strong></p>
+                    <p>Setiap foto memiliki cerita, setiap kenangan memiliki makna. Terima kasih telah mengunjungi ruang pribadi saya.</p>
+                    <div class="about-stats">
+                        <a href="https://www.instagram.com/fauzanalifatah_/" target="_blank" class="stat stat-link">
+                            <i class="fab fa-instagram"></i>
+                            <div class="stat-label">Instagram</div>
+                        </a>
+                        <a href="https://github.com/Fauzan893" target="_blank" class="stat stat-link">
+                            <i class="fab fa-github"></i>
+                            <div class="stat-label">GitHub</div>
+                        </a>
+                        <a href="https://www.tiktok.com/@tezuganz" target="_blank" class="stat stat-link">
+                            <i class="fab fa-tiktok"></i>
+                            <div class="stat-label">TikTok</div>
+                        </a>
+                        <a href="https://www.linkedin.com/in/m-fauzan-ali-fatah-b330b5379/" target="_blank" class="stat stat-link">
+                            <i class="fab fa-linkedin"></i>
+                            <div class="stat-label">LinkedIn</div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills & Education Section -->
+    <section id="skills-education" class="skills-education">
+        <div class="container">
+            <h2 class="section-title">Skills & Asal Pendidikan</h2>
+            <div class="skills-education-grid">
+                <!-- Web Development Skills -->
+                <div class="skills-box">
+                    <div class="box-header">
+                        <i class="fas fa-code"></i>
+                        <h3>Web Development</h3>
+                    </div>
+                    <div class="skills-list">
+                        <div class="skill-icon-item">
+                            <i class="fab fa-html5"></i>
+                            <p>HTML</p>
+                        </div>
+                        <div class="skill-icon-item">
+                            <i class="fab fa-css3-alt"></i>
+                            <p>CSS</p>
+                        </div>
+                        <div class="skill-icon-item">
+                            <i class="fab fa-js-square"></i>
+                            <p>JavaScript</p>
+                        </div>
+                        <div class="skill-icon-item">
+                            <i class="fab fa-figma"></i>
+                            <p>Figma</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Education -->
+                <div class="education-box">
+                    <div class="box-header">
+                        <i class="fas fa-graduation-cap"></i>
+                        <h3>Pendidikan</h3>
+                    </div>
+                    <div class="education-list">
+                        <div class="education-item">
+                            <div class="education-logo">
+                                <img src="gambar/LOGO UNM.png" alt="Logo Universitas Negeri Makassar">
+                            </div>
+                            <div class="education-content">
+                                <div class="education-year">2024 - Sekarang</div>
+                                <h4>Universitas Negeri Makassar</h4>
+                                <p>S1 - Bisnis Digital</p>
+                            </div>
+                        </div>
+                        <div class="education-item">
+                            <div class="education-logo">
+                                <img src="gambar/LOGO SMA 1.png" alt="Logo SMA Negeri 1">
+                            </div>
+                            <div class="education-content">
+                                <div class="education-year">2021 - 2024</div>
+                                <h4>SMA Negeri 1 Buru</h4>
+                                <p>Jurusan IPA</p>
+                            </div>
+                        </div>
+                        <div class="education-item">
+                            <div class="education-logo">
+                                <img src="gambar/LOGO MTS.png" alt="Logo MTs AL-HILAAL NAMLEA Buru">
+                            </div>
+                            <div class="education-content">
+                                <div class="education-year">2018 - 2021</div>
+                                <h4>MTs AL-HILAAL NAMLEA</h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="portfolio">
+        <div class="container">
+            <h2 class="section-title">Kenangan</h2>
+            <p class="portfolio-intro">Berikut adalah beberapa project dan karya yang telah saya kerjakan</p>
+            <div class="portfolio-filters">
+                <button class="portfolio-filter-btn active" data-portfolio-filter="all">Semua</button>
+                <button class="portfolio-filter-btn" data-portfolio-filter="web">Portofolio</button>
+                <button class="portfolio-filter-btn" data-portfolio-filter="penghargaan">Galeri Foto</button>
+            </div>
+            <div class="portfolio-grid">
+                <!-- Portfolio Item 1 -->
+                <div class="portfolio-item" data-portfolio-category="web">
+                    <div class="portfolio-card">
+                        <div class="portfolio-image">
+                            <img src="portofolio/Gambar 1.jpeg" alt="Portfolio 1">
+                            <span class="portfolio-badge">WEB DESIGN</span>
+                        </div>
+                        <div class="portfolio-content">
+                            <div class="portfolio-meta">
+                                <span class="portfolio-date"><i class="far fa-calendar"></i> 7 Mei 2025</span>
+                            </div>
+                            <h3 class="portfolio-title">Desain Website Modern dengan UI/UX Design Terkini</h3>
+                            <div class="portfolio-footer">
+                                <button class="read-more-btn" onclick="openPortfolioDetail(1)">Baca Selengkapnya</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Portfolio Item 2 -->
+                <div class="portfolio-item" data-portfolio-category="penghargaan">
+                    <div class="portfolio-card">
+                        <div class="portfolio-image">
+                            <img src="portofolio/Gambar 2.jpeg" alt="Portfolio 2">
+                            <span class="portfolio-badge">PENGHARGAAN</span>
+                        </div>
+                        <div class="portfolio-content">
+                            <div class="portfolio-meta">
+                                <span class="portfolio-date"><i class="far fa-calendar"></i> 7 Desember 2025</span>
+                            </div>
+                            <h3 class="portfolio-title">UAS Digital Marketing Days, Best Social Media "PureLyfe"</h3>
+                            <div class="portfolio-footer">
+                                <button class="read-more-btn" onclick="openPortfolioDetail(2)">Baca Selengkapnya</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Portfolio Item 3 -->
+                <div class="portfolio-item" data-portfolio-category="penghargaan">
+                    <div class="portfolio-card">
+                        <div class="portfolio-image">
+                            <img src="portofolio/Gambar 3 (Tampilan Awal).png" alt="Portfolio 3">
+                            <span class="portfolio-badge">PENGHARGAAN</span>
+                        </div>
+                        <div class="portfolio-content">
+                            <div class="portfolio-meta">
+                                <span class="portfolio-date"><i class="far fa-calendar"></i> 7-9 Mei 2025</span>
+                            </div>
+                            <h3 class="portfolio-title">Team Tigital Raih Penghargaan Best Video 2 di National Business Plan Competition 2025 FISH-H</h3>
+                            <div class="portfolio-footer">
+                                <button class="read-more-btn" onclick="openPortfolioDetail(3)">Baca Selengkapnya</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Portfolio Item 4 dan 5 dapat ditambah sesuai kebutuhan -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog Section -->
+    <section id="blog" class="blog">
+        <div class="container">
+            <h2 class="section-title">Blog</h2>
+            <div class="blog-carousel-wrapper">
+                <div class="blog-grid" id="blogGrid">
+                <!-- Blog Item 1 -->
+                <div class="blog-item">
+                    <div class="blog-image">
+                        <img src="Blogger/Gambar 1.png" alt="National Business Project">
+                    </div>
+                    <div class="blog-content">
+                        <h3 class="blog-title">MENGAPA TEKNIK SCAMPER ITU PENTING? BAGAIMANA CARA MENGAPLIKASIKAN TEKNIK SCAMPER INI?</h3>
+                        <p class="blog-excerpt">Apa Itu Teknik Scamper? Kalian perlu tau bahwa jika ingin membangun sebuah ide bisnis maka itu harus tau dulu metode-metode yang ingin kita terapkan ke dunia bisnis. nah teman-teman bisnis itu tidak segampang yang kalian pikir, oh bisnis........</p>
+                        <div class="blog-meta">
+                            <span class="blog-date"><i class="far fa-calendar"></i> 20 September 2025</span>
+                        </div>
+                        <a href="https://fauzanalifatah.blogspot.com/2025/09/teknik-scamper-dan-mengaplikasikan.html" target="_blank" class="blog-read-more">Baca Selengkapnya <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                <!-- Blog Item 2 -->
+                <div class="blog-item">
+                    <div class="blog-image">
+                        <img src="Blogger/Gambar 2.jpg" alt="Pasar Kompetitif">
+                    </div>
+                    <div class="blog-content">
+                        <h3 class="blog-title">GAK COBA MAKA......</h3>
+                        <p class="blog-excerpt">Kalian pernah kah mencoba sesuatu yang baru dan merasa takut gagal? Jangan biarkan ketakutan itu menghalangi langkahmu untuk meraih impian. Setiap kegagalan adalah pelajaran berharga yang membawa kita lebih dekat ke kesuksesan.....</p>
+                        <div class="blog-meta">
+                            <span class="blog-date"><i class="far fa-calendar"></i> 27 September 2025</span>
+                        </div>
+                        <a href="https://fauzanalifatah.blogspot.com/2025/09/gak-coba-maka.html" target="_blank" class="blog-read-more">Baca Selengkapnya <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                <!-- Blog Item lainnya dapat ditambah sesuai kebutuhan -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section-title">Hubungi Saya</h2>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h3>Contact Me</h3>
+                    <p>Jangan ragu untuk menghubungi saya. Saya senang berbagi cerita dan mendengar pengalaman Anda!</p>
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <div>
+                                <h4>Email</h4>
+                                <p>fauzanalifatah0@gmail.com</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-phone"></i>
+                            <div>
+                                <h4>Telepon</h4>
+                                <p>+62 823-9921-3651</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <div>
+                                <h4>Lokasi</h4>
+                                <p>Makassar, Indonesia</p>
+                            </div> 
+                        </div>
+                    </div>
+                    <div class="social-links">
+                        <a href="https://www.instagram.com/fauzanalifatah_/" target="_blank" class="social-link"><i class="fab fa-instagram"></i></a>
+                        <a href="https://github.com/Fauzan893" target="_blank" class="social-link"><i class="fab fa-github"></i></a>
+                        <a href="https://www.tiktok.com/@tezuganz" target="_blank" class="social-link"><i class="fab fa-tiktok"></i></a>
+                        <a href="https://www.linkedin.com/in/m-fauzan-ali-fatah-b330b5379/" target="_blank" class="social-link"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+                <form class="contact-form">
+                    <div class="form-group">
+                        <input type="text" placeholder="Nama Anda" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" placeholder="Email Anda" required>
+                    </div>
+                    <div class="form-group">
+                        <textarea rows="5" placeholder="Pesan Anda" required></textarea>
+                    </div>
+                    <button type="submit" class="submit-btn">Kirim Pesan</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2026 Web Pribadi Saya. Semua hak dilindungi.</p>
+        </div>
+    </footer>
+
+    <!-- Image Modal -->
+    <div id="imageModal" class="modal">
+        <span class="modal-close">&times;</span>
+        <img class="modal-content" id="modalImage">
+        <div class="modal-caption"></div>
+    </div>
+
+    <!-- Detail Modal -->
+    <div id="detailModal" class="detail-modal">
+        <div class="detail-modal-content">
+            <span class="detail-modal-close" onclick="closeDetailModal()">&times;</span>
+            <div class="detail-header">
+                <span class="detail-badge" id="detailBadge">WEB DESIGN</span>
+                <img id="detailImage" src="" alt="Detail Image">
+            </div>
+            <div class="detail-body">
+                <h2 id="detailTitle"></h2>
+                <div class="detail-meta">
+                    <span id="detailDate"><i class="far fa-calendar"></i> 12 Desember 2025</span>
+                </div>
+                <div class="detail-content" id="detailContent">
+                    <p>Konten detail akan muncul di sini...</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
