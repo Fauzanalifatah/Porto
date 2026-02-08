@@ -2501,18 +2501,51 @@ body {
 
 @media (max-width: 480px) {
     .hero-title {
-        font-size: 2rem;
+        font-size: 1.2rem;
+        line-height: 1.2;
+        word-break: break-word;
     }
-
     .section-title {
-        font-size: 2rem;
+        font-size: 1.1rem;
+        line-height: 1.2;
     }
-
-    .about-stats {
-        grid-template-columns: 1fr;
-    }
-
+    .about-stats,
     .skills-education-grid {
         grid-template-columns: 1fr;
+        gap: 8px;
+    }
+    img, .img-responsive {
+        max-width: 100%;
+        height: auto;
+        display: block;
+        margin: 0 auto;
+    }
+    .container, .content, .section {
+        padding: 4px 0;
+        margin: 0;
+    }
+    h1, h2, h3, h4, h5, h6 {
+        font-size: 1rem;
+        line-height: 1.2;
+    }
+    .card, .profile, .gallery {
+        width: 100%;
+        margin-bottom: 8px;
+    }
+    .button, button {
+        width: 100%;
+        font-size: 0.9rem;
+    }
+    nav ul {
+        flex-direction: column;
+        gap: 6px;
+    }
+    body {
+        padding: 4px;
+    }
+    header, nav, main, footer {
+        width: 100%;
+        padding: 0 2px;
+        box-sizing: border-box;
     }
 }
